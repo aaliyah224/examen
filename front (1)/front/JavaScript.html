@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+     <link rel="stylesheet" href="css/estilos.css">
+    <title>JavaScript Developer</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+     <!-- Header -->
+    <header>
+        <nav class="menu">
+            <ul>
+                  <img src="img/skill.png" alt="SkillForge Logo" width="150px" height="auto" />
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="certificaciones.html" class="protegido">Certificaciones</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+             </ul>
+        </nav>
+    </header> 
+
+    <section class="descripcion-section">
+        <div class="descripcion-container">
+            <div class="descripcion-bloque">
+                <img src="img/otrapose.jpg">
+                <div class="textoo">
+        <h1>Certificación profesional en JavaScript Developer</h1>
+        <p>JavaScript es el lenguaje que da vida a la web. Desde animaciones dinámicas hasta aplicaciones interactivas,
+           es una herramienta esencial para cualquier desarrollador moderno. Este curso de certificación está diseñado 
+           para brindarte una formación sólida y práctica, llevándote desde los fundamentos hasta las habilidades avanzadas
+            que demandan las empresas tecnológicas hoy en día. Ya sea que estés comenzando tu camino en el desarrollo web 
+            o buscando validar tus conocimientos con una certificación profesional, este programa es tu punto de partida ideal.</p>
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+    <div class="cuadro-beneficios">
+  <div class="beneficio">
+    <h3>Duración del examen</h3>
+    <p>2 Horas</p>
+  </div>
+  <div class="beneficio">
+    <h3>Puntuación mínima en el examen.</h3>
+    <p>⭐ 8 ★</p>
+  </div>
+  <div class="beneficio">
+    <h3>Costo de certificación</h3>
+    <p>$3500</p>
+  </div>
+</div><br>
+
+<h2 style=text-align:center>Ventajas</h2>
+
+<hr>
+
+<div class="ventajas-grid">
+  <div class="ventaja">
+    <h3 style=text-align:center>Formación estructurada y progresiva</h3>
+    <p>El curso está cuidadosamente diseñado para guiarte paso a paso, desde los conceptos básicos como variables, funciones y estructuras de control, hasta temas avanzados como programación orientada a objetos, manipulación del DOM, y consumo de APIs. Cada módulo está pensado para construir sobre el anterior, asegurando una comprensión sólida y aplicable.</p>
+  </div>
+
+  <div class="ventaja">
+    <h3 style=text-align:center>Mejora significativa en tus oportunidades laborales</h3>
+    <p>JavaScript es uno de los lenguajes más utilizados en el mundo. Con esta certificación, estarás preparado para roles como desarrollador frontend, desarrollador full-stack, diseñador web técnico o incluso para iniciar tus propios proyectos digitales. Las empresas valoran candidatos que demuestran iniciativa y formación continua.</p>
+  </div>
+
+  <div class="ventaja">
+    <h3 style=text-align:center>Certificación oficial con respaldo profesional</h3>
+    <p>Al finalizar el curso, recibirás una certificación que avala tus conocimientos en JavaScript. Este documento es ideal para incluir en tu portafolio, perfil de LinkedIn o currículum, y puede marcar la diferencia al postularte a empleos, becas o proyectos freelance.</p>
+  </div>
+
+  <div class="ventaja">
+    <h3 style=text-align:center>Flexibilidad para adaptarse a tu ritmo</h3>
+    <p>El curso está disponible en modalidad 100% online, con clases grabadas que puedes ver cuando quieras, y actividades que se ajustan a tu disponibilidad. Esto te permite avanzar sin sacrificar tus responsabilidades personales o profesionales.</p>
+  </div>
+
+
+
+</div>
+
+<div style="display: flex; justify-content: center;" class="botones-certificacion">
+  <a href="#" class="boton-primario" onclick="simularPago()">Pagar certificacion</a>
+  <a href="examen.html" class="boton-secundario">Iniciar examen</a>
+</div>
+
+<script>
+  // Función que simula el proceso de pago
+  document.addEventListener('DOMContentLoaded', () => {
+    const btnPagar = document.querySelector('.boton-primario');
+    const btnExamen = document.querySelector('.boton-secundario');
+    
+    // Verificar estado al cargar la página
+    const token = localStorage.getItem('token');
+    const pagoRealizado = localStorage.getItem('pagoRealizado');
+    
+    if (!token) {
+        btnPagar.style.opacity = "0.5";
+        btnExamen.style.opacity = "0.5";
+        btnExamen.onclick = () => 
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>'
+          });
+        return;
+    }
+    
+    // Lógica de pago
+    btnPagar.onclick = function(e) {
+        e.preventDefault();
+        if (pagoRealizado === 'true') {
+            Swal.fire({
+              icon: 'warning',
+              title: 'Pago duplicado',
+              text: 'Ya has realizado el pago. No puedes pagar dos veces.',
+              confirmButtonText: 'Entendido'
+            });
+
+        } else {
+            localStorage.setItem('pagoRealizado', 'true');
+            Swal.fire({
+              icon: 'success',
+              title: 'Pago realizado',
+              text: '✅ Pago realizado. Ahora puedes hacer el examen.',
+              confirmButtonText: 'Continuar'
+            });
+            btnExamen.style.opacity = "1";
+        }
+    };
+    
+    // Lógica de examen
+    btnExamen.onclick = function(e) {
+        e.preventDefault();
+        if (pagoRealizado !== 'true') {
+            Swal.fire({
+              icon: 'warning',
+              title: 'Pago duplicado',
+              text: 'Debes resalizar el pago primero.',
+              confirmButtonText: 'Entendido'
+            });
+        } else {
+            window.location.href = 'examen.html';
+        }
+    };
+  });
+</script>
+
+
+
+    
+</body>
+
+<footer class="footer">
+    <a href="https://www.instagram.com/tu_instagram_aqui" target="_blank" class="social-icon">
+        <img src="img/instagram.png" alt="Instagram">
+    </a>
+    <p>© 2025 SkillForge | Desarrollado por SkillForge</p>
+</footer>
+
+</html>

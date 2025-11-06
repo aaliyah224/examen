@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificaciones - SkillForge</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <img src="img/skill.png" alt="SkillForge Logo" width="150px" height="auto" />
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="certificaciones.html" class="protegido">Certificaciones</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="principal-section">
+        <div class="principal-container">
+            <div class="principal-image">
+                <img src="img/certi.jpeg" alt="Certificaciones">
+            </div>
+        </div>
+    </section>
+
+    <section class="certificaciones-section">
+        <div class="certificaciones-container">
+            <h2 style="text-align: center;">Nuestras certificaciones</h2>
+
+            <div class="certificacion-bloque">
+                <img src="img/java.jpg">
+                <div class="texto">
+                    <h2>Certificación en Java Developer</h2>
+                    <p>Domina uno de los lenguajes más utilizados en el mundo del desarrollo con nuestra certificación Java Developer. Aprende a construir aplicaciones robustas, seguras y escalables, y prepárate para enfrentar desafíos reales en el mundo tecnológico. Esta certificación te conecta con oportunidades laborales en empresas líderes y te posiciona como un desarrollador altamente capacitado.</p>
+                    <a href="java.html" class="boton-certificacion">Ver más</a>
+                </div>
+            </div>
+
+            <div class="certificacion-inverso">
+                <img src="img/jss.webp">
+                <div class="texto">
+                    <h2>Certificación JavaScript Developer</h2>
+                    <p>Conviértete en un experto en desarrollo web interactivo con nuestra certificación JavaScript Developer. Aprende a crear interfaces dinámicas, manejar eventos, consumir APIs y dominar uno de los lenguajes más demandados en el mundo digital.</p>
+                    <a href="JavaScript.html" class="boton-certificacion">Ver más</a>
+                </div>
+            </div>
+
+            <div class="certificacion-bloque">
+                <img src="img/cmasmas.jpeg">
+                <div class="texto">
+                    <h2>Certificación C++ Developer</h2>
+                    <p>Domina uno de los lenguajes más potentes y versátiles en el mundo del desarrollo con nuestra certificación C++ Developer. Aprende a construir software de alto rendimiento, sistemas embebidos y aplicaciones críticas para la industria. Esta certificación te prepara para enfrentar desafíos complejos en sectores como inteligencia artificial, videojuegos, robótica y ciberseguridad.</p>
+                    <a href="C++.html" class="boton-certificacion">Ver más</a>
+                </div>
+            </div>
+
+            <div class="certificacion-inverso">
+                <img src="img/C.png">
+                <div class="texto">
+                    <h2>Certificación C# Developer</h2>
+                    <p>Aprende a desarrollar aplicaciones modernas y eficientes con nuestra certificación C# Developer. Domina uno de los lenguajes más utilizados en el ecosistema .NET y prepárate para crear soluciones empresariales, aplicaciones web y servicios en la nube. Esta certificación te conecta con herramientas profesionales y te posiciona como un desarrollador versátil y altamente capacitado.</p>
+                    <a href="C.html" class="boton-certificacion">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de certificado aprobado -->
+    <section class="certificado-section" id="descargar-certificado" style="display: none;">
+        <div class="certificado-container">
+            
+            <div class="certificado-info">
+                <h3>Certificado JavaScript Developer</h3>
+                <p>Has completado exitosamente el examen de certificación JavaScript.</p>
+                <div class="certificado-details">
+                    <p><strong>Usuario:</strong> <span id="certificado-usuario"></span></p>
+                    <p><strong>Fecha:</strong> <span id="certificado-fecha"></span></p>
+                    <p><strong>Estado:</strong> <span id="certificado-estado"></span></p>
+                <button id="btn-descargar-certificado" class="btn-certificado">
+                    📄 Descargar Certificado PDF
+                </button>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">
+                    Tu certificado oficial de SkillForge
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="https://www.instagram.com/tu_instagram_aqui" target="_blank" class="social-icon">
+            <img src="img/instagram.png" alt="Instagram">
+        </a>
+        <p>© 2025 SkillForge | Desarrollado por SkillForge</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/certificaciones.js"></script>
+</body>
+</html>

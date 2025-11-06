@@ -1,0 +1,932 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Marcellus&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Purple+Purse&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Story+Script&family=TASA+Explorer:wght@400..800&display=swap');
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Old Standard TT", serif;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../img/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('../img/fondo2.jpg');
+    color: white;
+    padding: 15px 48px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+    color: #00bfff;
+}
+
+/* User info en header */
+.user-info {
+    color: #00bfff;
+    font-weight: bold;
+}
+
+.logout-btn {
+    color: #ff6b6b !important;
+}
+
+.logout-btn:hover {
+    color: #ff5252 !important;
+}
+
+/* Contenido principal */
+.contenido {
+    text-align: center;
+    margin-top: 100px;
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+.contenido h1 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contenido p {
+    font-size: 1.2rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Botones principales */
+.btn-principal {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #00bfff;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 191, 255, 0.3);
+    transition: 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-principal:hover {
+    background-color: #009acd;
+    transform: translateY(-2px);
+}
+
+.btn-secundario {
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 160px;
+    background-color: transparent;
+    color: #b2e9fb;
+    border: 2px solid #00bfff;
+}
+
+.btn-secundario:hover {
+    background-color: #171717;
+    color: #fff;
+    border-color: #00eaff;
+    transform: translateY(-2px);
+}
+
+/* Secciones */
+section {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+h1, h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Certificaciones */
+.principal-image img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    display: block;
+    margin: 40px auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 191, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.principal-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 191, 255, 0.4);
+}
+
+.certificaciones-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 40px;
+}
+
+.certificacion-bloque,
+.certificacion-inverso {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 30px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.certificacion-bloque:hover,
+.certificacion-inverso:hover {
+    background-color: rgba(26, 26, 26, 0.8);
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.certificacion-bloque {
+    flex-direction: row;
+}
+
+.certificacion-inverso {
+    flex-direction: row-reverse;
+}
+
+.certificacion-bloque img,
+.certificacion-inverso img {
+    width: 40%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.texto {
+    width: 55%;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.texto h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #00bfff;
+}
+
+.texto p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.boton-certificacion {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #00bfff;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 191, 255, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton-certificacion:hover {
+    background-color: #009acd;
+    transform: scale(1.05);
+}
+
+/* Popup */
+#popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#popup-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+#popup-box h2 {
+    margin-top: 0;
+    color: #24d7ff;
+}
+
+#popup-box p {
+    font-size: 16px;
+    color: #333;
+}
+
+#popup-box button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #39cafa;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#popup-box button:hover {
+    background-color: #1a20bf;
+}
+
+/* Descripción de certificaciones */
+.descripcion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 30px;
+}
+
+.descripcion-bloque {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: #e0f8f9;
+    border-radius: 18px;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+.descripcion-bloque img {
+    width: 200%;
+    max-width: 550px;
+    border-radius: 12px;
+}
+
+.descripcion-bloque {
+    flex-direction: row-reverse;
+}
+
+.textoo {
+    width: 55%;
+    color: #000000;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.textoo h1 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.textoo p {
+    font-size: 1rem;
+    color: #000000;
+}
+
+/* Cuadro de beneficios */
+.cuadro-beneficios {
+    display: flex;
+    margin: auto;
+    margin-top: 0rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    gap: 20px;
+    width: 1220px;
+}
+
+.beneficio {
+    flex: 1 1 180px;
+    min-width: 180px;
+    text-align: center;
+}
+
+.beneficio h3 {
+    font-size: 1.1rem;
+    color: #0077cc;
+    margin-bottom: 8px;
+}
+
+.beneficio p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Ventajas grid */
+.ventajas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 20px;
+}
+
+.ventaja {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(185, 236, 255, 0.988);
+    padding: 24px;
+    text-align: left;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-left: 4px solid transparent;
+}
+
+.ventaja:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 191, 255, 0.4);
+    border-left: 4px solid #00bfff;
+    background-color: #1a1a1a;
+}
+
+.ventaja h3 {
+    font-size: 1.3rem;
+    color: #000000;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.ventaja:hover h3 {
+    color: #00eaff;
+}
+
+.ventaja p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.ventaja:hover p {
+    color: #eee;
+}
+
+/* Botones de certificación */
+.botones-certificacion {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.boton-primario,
+.boton-secundario {
+    padding: 12px 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 160px;
+    border: 2px solid #00bfff;
+}
+
+.boton-primario {
+    background-color: transparent;
+    color: #fff;
+}
+
+.boton-primario:hover {
+    background-color: #111112;
+    transform: translateY(-2px);
+    color: #fff;
+    border-color: #00eaff;
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: #b2e9fb;
+}
+
+.boton-secundario:hover {
+    background-color: #171717;
+    color: #fff;
+    border-color: #00eaff;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 15px;
+    background-image: url('../img/fondo2.jpg');
+    color: white;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    color: #ffffff;
+}
+
+.footer .social-icon img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1);
+    margin-bottom: 10px;
+}
+
+.footer .social-icon img:hover {
+    transform: scale(1.2);
+}
+
+/* Login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    padding: 20px;
+}
+
+.login-box {
+    background-image: url('../img/fondologin.jpg');
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #37343f;
+}
+
+.login-box label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #544d4d;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.login-box .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #1e679b;
+    color: rgb(231, 234, 233);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.login-box .btn:hover {
+    opacity: 0.9;
+}
+
+#loginMessage {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Contacto */
+.contacto-container {
+    padding: 40px;
+    text-align: center;
+}
+
+.contacto-content {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.form-contacto {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.form-contacto textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-contacto button {
+    padding: 10px;
+    background-color: #3a7bd5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.form-contacto button:hover {
+    background-color: #295b9a;
+}
+
+.info-contacto {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+    background: #c0ceb9;
+    padding: 20px;
+    border-radius: 10px;
+    color: #1a1a1a;
+}
+
+.info-contacto h3 {
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.info-contacto p {
+    margin: 8px 0;
+    color: #333;
+}
+
+/* Nosotros */
+.nosotros {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.nosotros .intro {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #c0beff;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background-image: url('../img/fondologin.jpg');
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    font-family: "Old Standard TT", serif;
+    margin-bottom: 10px;
+    color: #df6954;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #3d3d3d;
+}
+
+/* Instructores */
+.instructores {
+    text-align: center;
+    margin-top: 50px;
+    padding: 40px 20px;
+}
+
+.instructores h2 {
+    font-family: "Old Standard TT", serif;
+    font-size: 2rem;
+    color: #df6954;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.instructores-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.instructor-card {
+    background: rgb(40, 39, 39);
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.instructor-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #df6954;
+}
+
+.instructor-card h3 {
+    font-family: "Old Standard TT", serif;
+    font-size: 1.2rem;
+    color: #df6954;
+    margin-bottom: 10px;
+}
+
+.instructor-card p {
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.4;
+}
+
+/* Sección de certificado aprobado */
+.certificado-section {
+    background: linear-gradient(135deg, #00bfff, #0077cc);
+    color: white;
+    padding: 60px 20px;
+    margin: 40px 0;
+    text-align: center;
+    border-radius: 15px;
+    display: none;
+}
+
+.certificado-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.certificado-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    margin-top: 20px;
+}
+
+.certificado-details {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.certificado-details p {
+    margin: 10px 0;
+    color: white;
+}
+
+.btn-certificado {
+    background: #fff;
+    color: #00bfff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-certificado:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .certificacion-bloque,
+    .certificacion-inverso {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .certificacion-bloque img,
+    .certificacion-inverso img,
+    .texto {
+        width: 100%;
+    }
+    
+    .ventajas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cuadro-beneficios {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .descripcion-bloque {
+        flex-direction: column;
+    }
+    
+    .textoo {
+        width: 100%;
+    }
+    
+    .botones-certificacion {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contacto-content {
+        flex-direction: column;
+    }
+    
+    .instructores-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    section {
+        padding: 40px 20px;
+    }
+    
+    .contenido h1 {
+        font-size: 2rem;
+    }
+    
+    .contenido p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-box {
+        padding: 20px;
+    }
+    
+    .certificaciones-container {
+        padding: 20px;
+    }
+    
+    .descripcion-container {
+        padding: 15px;
+    }
+    
+    .ventaja {
+        padding: 15px;
+    }
+}
+
+/* Estilos para la sección de certificado*/
+.certificado-section {
+    background: linear-gradient(135deg, #00bfff, #0077cc);
+    color: white;
+    padding: 60px 20px;
+    margin: 40px 0;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.certificado-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.certificado-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    margin-top: 20px;
+}
+
+.certificado-details {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.certificado-details p {
+    margin: 10px 0;
+    color: white;
+}
+
+.btn-certificado {
+    background: #fff;
+    color: #00bfff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-certificado:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-certificado:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}

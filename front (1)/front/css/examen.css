@@ -1,0 +1,215 @@
+.examen-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    color: #333;
+}
+
+.examen-container h1 {
+    text-align: center;
+    color: #00bfff;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+
+.info-examen {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 4px solid #00bfff;
+}
+
+.info-examen p {
+    margin: 8px 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+.info-examen strong {
+    color: #333;
+}
+
+/* Progreso del examen */
+.progreso-examen {
+    margin-bottom: 30px;
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.progreso-llenado {
+    height: 100%;
+    background-color: #00bfff;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+.progreso-examen p {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Preguntas */
+.pregunta {
+    margin-bottom: 30px;
+    padding: 25px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+.pregunta.activa {
+    border-color: #00bfff;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 191, 255, 0.1);
+}
+
+.pregunta h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.opcion {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.opcion:hover {
+    border-color: #00bfff;
+    background: #f0faff;
+}
+
+.opcion input {
+    margin-right: 12px;
+    margin-top: 2px;
+    transform: scale(1.1);
+}
+
+.opcion.seleccionada {
+    border-color: #00bfff;
+    background: #e6f7ff;
+}
+
+.texto-opcion {
+    flex: 1;
+}
+
+/* Botones de navegación */
+.acciones-examen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.btn-enviar {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-enviar:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Temporizador */
+.tiempo-restante {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff3cd;
+    border-radius: 10px;
+    border: 1px solid #ffeaa7;
+}
+
+.tiempo-restante h3 {
+    color: #856404;
+    margin-bottom: 10px;
+}
+
+.temporizador {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #856404;
+    font-family: 'Courier New', monospace;
+}
+
+.temporizador.urgente {
+    color: #dc3545;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Indicador de pregunta actual */
+.indicador-pregunta {
+    display: inline-block;
+    background: #00bfff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+/* Responsive para examen */
+@media (max-width: 768px) {
+    .examen-container {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    .acciones-examen {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-principal, .btn-secundario, .btn-enviar {
+        width: 100%;
+    }
+    
+    .temporizador {
+        font-size: 1.5rem;
+    }
+}
