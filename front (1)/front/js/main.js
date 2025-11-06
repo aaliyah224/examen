@@ -422,7 +422,7 @@ function configurarFormularioContacto() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(datos)
+                body: JSON.stringify(datos) //convertimos el objeto datos a una cadena json
             });
             
             if (response.ok) {

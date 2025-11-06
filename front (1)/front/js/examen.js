@@ -201,9 +201,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         try {
             console.log('Enviando respuestas:', respuestas);
             
+            // Realiza una solicitud HTTP al backend para enviar las respuestas del examen
             const response = await fetch('http://localhost:3000/api/exam/submit', {
                 method: 'POST',
                 headers: {
+                     // Envía el token JWT del usuario para autenticación (formato Bearer)
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
                 },

@@ -81,10 +81,11 @@ async function descargarCertificado(intentoId) {
         
         console.log('Solicitando certificado para intento:', intentoId);
         
+         // Llama al backend para obtener el PDF
         const response = await fetch(`http://localhost:3000/api/cert/${intentoId}/pdf`, {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`  // Llama al backend para obtener el PDF
             }
         });
         
