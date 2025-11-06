@@ -197,23 +197,40 @@ function mostrarUsuarioNoLogueado() {
 function manejarLogout(e) {
     e.preventDefault();
     console.log("Ejecutando logout...");
-    
-    // Mostrar confirmación
-    if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
-        // Limpiar localStorage
-        localStorage.removeItem('token');
-        localStorage.removeItem('usuario');
-        localStorage.removeItem('pagoRealizado'); // También limpiar estado de pago
-        
-        console.log("Datos de sesión eliminados");
-        
-        // Mostrar mensaje de confirmación
-        alert('Sesión cerrada correctamente');
-        
-        // Redirigir a la página principal
-        window.location.href = "index.html";
-    }
+
+    // Mostrar confirmación con SweetAlert2
+    Swal.fire({
+        title: '¿Cerrar sesión?',
+        text: '¿Estás segura de que quieres cerrar sesión?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, cerrar sesión',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Limpiar localStorage
+            localStorage.removeItem('token');
+            localStorage.removeItem('usuario');
+            localStorage.removeItem('pagoRealizado');
+
+            console.log("Datos de sesión eliminados");
+
+            // Mostrar mensaje de confirmación con SweetAlert2
+            Swal.fire({
+                title: 'Sesión cerrada',
+                text: 'Has salido correctamente',
+                icon: 'success',
+                confirmButtonColor: '#3085d6'
+            }).then(() => {
+                // Redirigir a la página principal
+                window.location.href = "index.html";
+            });
+        }
+    });
 }
+
 
 /**
  * Configura elementos protegidos que requieren autenticación
